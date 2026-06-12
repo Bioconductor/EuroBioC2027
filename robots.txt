@@ -1,0 +1,1 @@
+Sitemap: https://eurobioc2027.bioconductor.org/sitemap.xml

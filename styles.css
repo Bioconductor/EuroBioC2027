@@ -1,0 +1,227 @@
+/* css styles */
+
+/* right-hand table of contents */
+.sidebar nav[role="doc-toc"] ul > li > a {
+    color: grey !important;
+}
+
+/* highlighting currently active entry */
+.sidebar nav[role="doc-toc"] ul > li > a.active {
+    font-weight: bold;
+    background-color: #f3fae9;
+}
+
+b,strong {
+  font-weight: bold;
+  color: black;
+}
+
+.navbar-logo {
+  width: 100%;
+  max-height: 100%;
+  align-items: baseline;
+}
+
+.nav-link{
+  color:white !important;
+  text-color:white !important;
+}
+
+.navbar{
+  text-color: white;
+  background-image: linear-gradient(to right,white,#0087af,#18a603);
+}
+
+/* unfold hamburger menu on the right */
+.navbar-collapse {
+  text-align: right;
+}
+
+/* footer text-color & background */
+.nav-footer{
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  align-items: center;
+  color: black !important;
+  background-image: linear-gradient(to right,white,#ebf4f7,#0087af);
+}
+
+/* footer icons */
+.nav-footer li.nav-item a.nav-link{
+  color: black !important;
+}
+
+/* footer links */
+.nav-footer a:link{
+  color: black !important;
+}
+
+/* vertically center, from https://github.com/quarto-dev/quarto-cli/discussions/1386 */
+.v-center-container {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.deadline {
+  color: #d73027;
+  font-size: 1.15em;
+  font-weight: 600;
+}
+
+img.speaker {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.sponsor-link { display: block; text-align: center; }
+
+.sponsor-logo{
+  display:block;
+  margin:0 auto;
+  max-height:200px;
+  width:auto;
+  height:auto;
+
+  max-width:100%;
+}
+
+
+.sponsor-name {
+  margin-top: 0.6rem;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+details.schedule-details {
+  margin: 0;
+}
+
+details.schedule-details summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.45;
+
+  display: block;              /* IMPORTANT */
+  position: relative;          /* for absolute arrow */
+  padding-right: 1.8rem;       /* space for arrow */
+}
+
+details.schedule-details summary::-webkit-details-marker {
+  display: none;
+}
+
+details.schedule-details summary::marker {
+  content: "";
+}
+
+/* RIGHT-ALIGNED CHEVRON */
+details.schedule-details summary::after {
+  content: "›";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3em;
+  color: #8a8a8a;
+}
+
+/* OPEN STATE */
+details.schedule-details[open] summary::after {
+  content: "⌄";
+}
+
+/* Card styling */
+.instructor-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.instructor-card {
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+.instructor-card h3 {
+  font-size: 1rem;
+  margin: 0.25rem 0 0.3rem 0;
+
+  /* key fixes */
+  line-height: 1.2;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.instructor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+/* Image consistency trick */
+.instructor-img-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* square looks better for compact grids */
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.instructor-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.instructor-card {
+  background: white;
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.instructor-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.instructor-bio {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.promo-banner {
+  background: linear-gradient(135deg, #0087af, #18a603);
+  color: white;
+  padding: 1.2rem 1.5rem;
+  border-radius: 14px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.promo-banner h2,
+.promo-banner h3 {
+  color: white;
+  margin-top: 0;
+}
+
+.promo-banner a {
+  color: white;
+  font-weight: 600;
+  text-decoration: underline;
+}
