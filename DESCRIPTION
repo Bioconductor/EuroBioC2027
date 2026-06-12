@@ -1,0 +1,16 @@
+Package: EuroBioC2027
+Title: EuroBioC2027 Website
+Description: Quarto site for EuroBioC2027 conference
+Depends: R (>= 4.3.0)
+Imports:
+    dplyr,
+    kableExtra,
+    knitr,
+    leaflet,
+    leaflet.extras,
+    lubridate,
+    osrm,
+    readr,
+    sf
+Remotes:
+    github::trafficonese/leaflet.extras

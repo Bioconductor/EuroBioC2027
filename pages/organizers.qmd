@@ -1,0 +1,10 @@
+# Organizers
+
+```{r results="asis"}
+#| label: organizer_table
+#| warning: false
+#| echo: false
+source(file.path("..", "R", "organizers.R"))
+create_organizer_table()
+```
+

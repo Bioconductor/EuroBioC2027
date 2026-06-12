@@ -1,0 +1,124 @@
+---
+pagetitle: "European Bioconductor Conference 2027"
+page-layout: custom
+section-divs: false
+editor: source
+sidebar: false
+search: false
+repo-actions: false
+description: |
+  The European Bioconductor Conference (EuroBioC2027) will take place on 
+  September 8-10 in Basel, Switzerland. EuroBioC2027 will bring together the 
+  Bioconductor community to showcase the latest cutting-edge developments on 
+  Bioconductor software packages, as well as on broader emerging technologies 
+  impacting computational biology.
+image: images/logos/bioconductor.svg
+toc: false
+---
+
+:::: {.columns}
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="43%"}
+::: {.img-float}
+![](images/logos/bioconductor_sticker.gif){style="width: 25%; float: left; margin: 10px;"}
+:::
+\
+The European Bioconductor Conference (EuroBioC2027) will take place on
+**September 8-10** in **Basel, Switzerland**. EuroBioC2027 will bring together
+the  Bioconductor community to showcase the latest cutting-edge developments on
+Bioconductor software packages, as well as on broader emerging technologies
+impacting computational biology.
+
+<div style="clear: both;"></div>
+
+<!--
+
+::: {.promo-banner}
+
+### Live streaming available
+
+Can't attend in-person? Join us online **for free!**
+
+See more information from [here](pages/streaming.qmd).
+
+:::
+
+-->
+
+:::
+
+::: {.column width="4%"}
+
+:::
+
+::: {.column width="43%"}
+::: {style="text-align:center;"}
+\
+
+```{r}
+#| label: timer
+#| results: asis
+#| echo: false
+#| warning: false
+#| message: false
+source("R/timer.R")
+countdown_timer("2027-09-08 09:00:00", "2027-09-10 14:00:00")
+```
+
+
+**Important dates**
+:::
+
+- **TBD**: Call for abstracts opens
+- **TBD**: Call for abstracts closes
+- **TBD**: Sticker design contest closes
+- **TBD**: Registration opens
+- **TBD**: Registration closes
+- **September 6-7**: Pre-conference events
+- **September 8-10**: The EuroBioC2027 conference!
+
+<!--
+- <span class="deadline"><strong>June 3-5:</strong> The EuroBioC2026 conference!</span>
+-->
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::::
+
+```{r}
+#| label: carousel
+#| classes: '.g-col-lg-6 .g-col-12 .g-col-md-12'
+#| warning: false
+#| echo: false
+source("R/carousel.R")
+carousel(
+    "gallery-carousel",
+    5555, # flip time in ms
+    yaml.load_file("data/carousel.yml")
+)
+```
+
+<!--
+# \ \ \ Partnering with
+
+```{r}
+#| label: sponsors
+#| results: asis
+#| echo: false
+#| warning: false
+#| message: false
+source("R/sponsors.R")
+render_sponsors_home(
+    "data/sponsors.csv",
+    ncol = 3
+)
+```
+-->

@@ -1,0 +1,20 @@
+- image: "images/carousel/eurobioc2025_group.jpg"
+
+- image: "images/carousel/eurobioc2025_1.jpg"
+
+- image: "images/carousel/eurobioc2025_2.jpg"
+
+- image: "images/carousel/EuroBioC2026.png"
+  link: "https://eurobioc2026.bioconductor.org"
+
+- image: "images/carousel/EuroBioC2025.png"
+  link: "https://eurobioc2025.bioconductor.org"
+
+- image: "images/carousel/EuroBioC2024.png"
+  link: "https://eurobioc2024.bioconductor.org"
+
+- image: "images/carousel/EuroBioC2023.png"
+  link: "https://eurobioc2023.bioconductor.org"
+
+- image: "images/carousel/EuroBioC2022.png"
+  link: "https://eurobioc2022.bioconductor.org"

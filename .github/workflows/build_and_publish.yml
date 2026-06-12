@@ -1,0 +1,81 @@
+name: Build and publish
+
+on:
+  push:
+    branches: [devel]   # Run this workflow only when pushing to the 'devel' branch
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Ensure full git history is available (needed for Quarto publishing)
+          ref: devel       # Explicitly check out the 'devel' branch
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      # Fixes "dubious ownership" error when running inside container
+      - name: Mark repo as safe for git
+        run: git config --global --add safe.directory $GITHUB_WORKSPACE
+
+      # Makes sure 'gh-pages' branch exists locally so Quarto can publish to it
+      - name: Fetch gh-pages branch
+        run: git fetch origin gh-pages:gh-pages
+
+      # We could specify Quarto version, but if we want to always use the latest
+      # one, we need the following libraries to get the information on what is
+      # the latest Quarto version.
+      - name: Install GitHub CLI and jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gh jq
+
+      # Install dependencies required by some R packages
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libudunits2-dev libgdal-dev libgeos-dev libproj-dev
+
+      # Install Quarto
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      # Ensure that the caching directory is available
+      - name: Ensure R library directory exists
+        run: mkdir -p $R_LIBS_USER
+
+      # Cache previously installed R packages to speed up future builds
+      - name: Cache R packages
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ hashFiles('**/DESCRIPTION') }}
+          restore-keys: |
+            ${{ runner.os }}-r-
+
+      # Install all R dependencies defined in DESCRIPTION file
+      - name: Install dependencies
+        run: |
+          Rscript -e "install.packages('remotes')"
+          Rscript -e "install.packages('devtools')"
+          Rscript -e "Sys.setenv(GITHUB_PAT = Sys.getenv('GITHUB_TOKEN')); devtools::install_deps(dependencies = TRUE)"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Build the Quarto project into HTML
+      - name: Render site
+        run: quarto render
+
+      # Push the rendered site to the gh-pages branch for GitHub Pages hosting
+      - name: Publish to GitHub Pages
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
