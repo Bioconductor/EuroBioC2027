@@ -1,0 +1,24 @@
+# Tentative schedule
+
+<!--
+
+::: {.callout-tip appearance="simple"}
+See the schedule for the pre-conference events [here](pre-conference.qmd).
+:::
+
+-->
+
+```{r}
+#| results: asis
+#| echo: false
+#| warning: false
+#| message: false
+source("../R/schedule.R")
+# render_detailed_program(
+#   program_csv = "../data/program.csv",
+#   sessions_csv = "../data/sessions.csv"
+# )
+render_program_schedule(
+  program_csv = "../data/program.csv"
+)
+```
