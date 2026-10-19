@@ -106,6 +106,21 @@ carousel(
 )
 ```
 
+# \ \ \ Co-organizing institutions
+
+```{r}
+#| label: coorganizers
+#| results: asis
+#| echo: false
+#| warning: false
+#| message: false
+source("R/sponsors.R")
+render_sponsors_home(
+    "data/coorganizers.csv",
+    ncol = 3
+)
+```
+
 <!--
 # \ \ \ Partnering with
 

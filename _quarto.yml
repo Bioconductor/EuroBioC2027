@@ -42,9 +42,11 @@ website:
           - href: pages/code-of-conduct.qmd
   page-footer:
     left: |
-      <!-- [![](/images/logos/utu.png){width=25%}](https://www.utu.fi/en){target="_blank"}
-      [![](/images/logos/complifesci.png){width=25%}](https://biocityturku.fi/research-programs/complifesci/){target="_blank"}
-      [![](/images/logos/finnish_bioinfo.jpeg){width=25%}](https://www.bioinf.fi/){target="_blank"} -->
+      [![](/images/partners/unibasel.png){width=18%}](https://www.unibas.ch/en.html){target="_blank"}
+      [![](/images/partners/dbm.png){width=18%}](https://biomedizin.unibas.ch/en/){target="_blank"}
+      [![](/images/partners/FMI-RGB-1.png){width=18%}](https://www.fmi.ch/){target="_blank"}
+      [![](/images/partners/uzh-logo-black.png){width=18%}](https://www.uzh.ch/en.html){target="_blank"}
+      [![](/images/partners/DSS.png){width=18%}](https://www.unipd.it/en/stat){target="_blank"}
     center: |
       Copyright &copy; 2027 Bioconductor
       <br>[eurobioc@bioconductor.org](mailto:eurobioc@bioconductor.org)
