@@ -73,9 +73,10 @@ countdown_timer("2027-09-08 09:00:00", "2027-09-10 14:00:00")
 **Important dates**
 :::
 
-- **TBD**: Call for abstracts opens
-- **TBD**: Call for abstracts closes
-- **TBD**: Sticker design contest closes
+- **January 15**: Sticker design contest closes
+- **February 15**: Call for abstracts opens
+- **April 30**: Call for abstracts closes
+- **May 24**: Notification of decision 
 - **TBD**: Registration opens
 - **TBD**: Registration closes
 - **September 6-7**: Pre-conference events
